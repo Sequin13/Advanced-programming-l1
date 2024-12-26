@@ -1,5 +1,5 @@
 def operations_on_lists(first_list: list, scnd_list: list) -> list:
-    return [num ** 3 for num in list(set(first_list + scnd_list))]
+    return [num**3 for num in list(set(first_list + scnd_list))]
 
 
 l1 = [3, 2, 3, 4, 5, 6, 7, 8, 8, 9]
