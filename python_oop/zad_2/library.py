@@ -7,5 +7,8 @@ class Library:
         self.phone = phone
 
     def __str__(self):
-        return (f"Biblioteka na ulicy {self.street} w mieście {self.city} otwarta w godzinach {self.open_hours}. Nr. "
-                f"telefonu: {self.phone}")
+        return (
+            f"Biblioteka na ulicy {self.street} w "
+            f"mieście {self.city} otwarta w godzinach {self.open_hours}."
+            f" Nr. telefonu: {self.phone}"
+        )

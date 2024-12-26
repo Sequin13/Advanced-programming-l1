@@ -15,11 +15,36 @@ def main():
     book_4 = Book(library_2, "08.09.2077", "Johnny", "Silverhand", "911")
     book_5 = Book(library_1, "9.9.1999", "Jan", "Kowalski", "12")
 
-    employee_1 = Employee("Mario", "Super", "12.12.2015", "15.04.1974", "Dziwnów", "Kolorowa", "30-325",
-                          "+481324354667")
-    employee_2 = Employee("Luigi", "Super", "12.12.2015", "5.01.1974", "Dziwnów", "Kolorowa", "30-325", "+481324354668")
-    employee_3 = Employee("Marcin", "Najman", "12.12.2015", "14.12.1970", "Warszawa", "Tulipanowa", "31-325",
-                          "+48153354667")
+    employee_1 = Employee(
+        "Mario",
+        "Super",
+        "12.12.2015",
+        "15.04.1974",
+        "Dziwnów",
+        "Kolorowa",
+        "30-325",
+        "+481324354667",
+    )
+    employee_2 = Employee(
+        "Luigi",
+        "Super",
+        "12.12.2015",
+        "5.01.1974",
+        "Dziwnów",
+        "Kolorowa",
+        "30-325",
+        "+481324354668",
+    )
+    employee_3 = Employee(
+        "Marcin",
+        "Najman",
+        "12.12.2015",
+        "14.12.1970",
+        "Warszawa",
+        "Tulipanowa",
+        "31-325",
+        "+48153354667",
+    )
 
     student_1 = Student("Karol", [12, 13, 100, 54])
     student_2 = Student("Maciej", [66, 0, 100, 42])

@@ -4,4 +4,3 @@ class Property:
         self.rooms = rooms
         self.price = price
         self.address = address
-

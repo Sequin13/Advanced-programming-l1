@@ -7,5 +7,9 @@ class House(Property):
         self.plot = plot
 
     def __str__(self):
-        return (f"Dom o powierzchni {self.area} posiada działkę o powiierzchni: {self.plot}, "
-                f"a także ma {self.rooms} pokoi, kosztuje {self.price}. Adres: {self.address}")
+        return (
+            f"Dom o powierzchni {self.area} posiada działkę "
+            f"o powierzchni: {self.plot}, "
+            f"a także ma {self.rooms} pokoi, kosztuje {self.price}. "
+            f"Adres: {self.address}"
+        )
