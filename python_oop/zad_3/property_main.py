@@ -1,6 +1,6 @@
-from property import Property
 from house import House
 from flat import Flat
+
 
 def main():
     house1 = House(225, 7, 1000000, "Sosnowiec, ul. Kwiatowa 53", 150)
