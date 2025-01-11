@@ -19,7 +19,8 @@ class Tags:
 
 def get_tags_from_db():
     tags = []
-    with open('database/tags.csv', mode='r', encoding='utf-8') as tags_file:
+    with (open('database/tags.csv', mode='r', encoding='utf-8')
+          as tags_file):
         read_tag_csv = csv.DictReader(tags_file, delimiter=',')
         for row in read_tag_csv:
             tag = Tags(row['userId'], row['movieId'], row['tag'], row['timestamp'])

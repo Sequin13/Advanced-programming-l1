@@ -17,7 +17,8 @@ class Movie:
 
 def get_movies_from_db():
     movies = []
-    with open('database/movies.csv', mode='r', encoding='utf-8') as movies_file:
+    with (open('database/movies.csv', mode='r', encoding='utf-8')
+          as movies_file):
         read_movies_csv = csv.DictReader(movies_file, delimiter=',')
         for row in read_movies_csv:
             movie = Movie(row['movieId'], row['title'], row['genres'])

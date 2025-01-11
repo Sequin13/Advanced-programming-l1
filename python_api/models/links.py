@@ -17,7 +17,8 @@ class Links:
 
 def get_links_from_db():
     links = []
-    with open('database/movies.csv', mode='r', encoding='utf-8') as links_file:
+    with (open('database/movies.csv', mode='r', encoding='utf-8')
+          as links_file):
         read_links_csv = csv.DictReader(links_file, delimiter=',')
         for row in read_links_csv:
             link = Links(row['movieId'], row['imdbId'], row['tmdbId'])

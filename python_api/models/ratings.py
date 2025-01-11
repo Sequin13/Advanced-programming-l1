@@ -19,9 +19,11 @@ class Ratings:
 
 def get_ratings_from_db():
     ratings = []
-    with open('database/ratings.csv', mode='r', encoding='utf-8') as ratings_file:
+    with (open('database/ratings.csv', mode='r', encoding='utf-8')
+          as ratings_file):
         read_ratings_csv = csv.DictReader(ratings_file, delimiter=',')
         for row in read_ratings_csv:
-            rating = Ratings(row['userId'], row['movieId'], row['rating'], row['timestamp'])
+            rating = Ratings(row['userId'], row['movieId'],
+                             row['rating'], row['timestamp'])
             ratings.append(rating)
     return ratings
