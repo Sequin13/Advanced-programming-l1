@@ -23,6 +23,7 @@ def get_tags_from_db():
           as tags_file):
         read_tag_csv = csv.DictReader(tags_file, delimiter=',')
         for row in read_tag_csv:
-            tag = Tags(row['userId'], row['movieId'], row['tag'], row['timestamp'])
+            tag = Tags(row['userId'], row['movieId'],
+                       row['tag'], row['timestamp'])
             tags.append(tag)
     return tags
