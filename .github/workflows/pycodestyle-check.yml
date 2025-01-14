@@ -26,3 +26,5 @@ jobs:
     - name: Run pycodestyle
       run: |
         pycodestyle .  
+        pycodestyle . --max-line-length=200 
+        
