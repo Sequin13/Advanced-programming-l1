@@ -1,25 +1,26 @@
 import pika
+import os
+import json
+
+INPUT_FOLDER = "input_images"
+QUEUE_NAME = "image_queue"
 
 
-def enqueue_messages(messages):
+def publish_messages():
     connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
     channel = connection.channel()
+    channel.queue_declare(queue=QUEUE_NAME)
 
-    channel.queue_declare(queue='task_queue', durable=True)
-
-    for message in messages:
-        channel.basic_publish(
-            exchange='',
-            routing_key='task_queue',
-            body=message,
-            properties=pika.BasicProperties(
-                delivery_mode=2,
-            )
-        )
-        print(f" [x] Wysłano '{message}'")
+    for filename in os.listdir(INPUT_FOLDER):
+        filepath = os.path.join(INPUT_FOLDER, filename)
+        if os.path.isfile(filepath):
+            channel.basic_publish(exchange='',
+                                  routing_key=QUEUE_NAME,
+                                  body=json.dumps({"image_path": filepath}))
+            print(f"Zakolejkowano: {filename}")
 
     connection.close()
 
 
-messages = ["xd", "chuj", "kurwa", "wiadomosc nr cipka"]
-enqueue_messages(messages)
+if __name__ == "__main__":
+    publish_messages()
